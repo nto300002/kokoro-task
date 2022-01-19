@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-01-19T13:47:48.224Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="bx-tSJNGimvKBTaoKzEI" version="15.9.4" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-01-19T13:52:06.026Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36" etag="ENG4He5kuur-l2wRN6QZ" version="15.9.4" type="github" pages="2">
   <diagram id="4iBBe8WfqcsM1V_60n8h" name="Page-1">
     <mxGraphModel dx="953" dy="589" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -308,7 +308,7 @@
           <mxGeometry x="-120" y="18" width="300" height="164" as="geometry" />
         </mxCell>
         <mxCell id="velXcS6_VG1nVzbx7mFF-115" value="" style="group" vertex="1" connectable="0" parent="velXcS6_VG1nVzbx7mFF-114">
-          <mxGeometry x="10" width="282.5" height="107" as="geometry" />
+          <mxGeometry x="10" width="282.5" height="122" as="geometry" />
         </mxCell>
         <mxCell id="velXcS6_VG1nVzbx7mFF-116" value="@id @default(autoincrement())&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="velXcS6_VG1nVzbx7mFF-115">
           <mxGeometry x="10" width="180" height="17" as="geometry" />
@@ -322,8 +322,11 @@
         <mxCell id="velXcS6_VG1nVzbx7mFF-131" value="User @relation(fields: [userId], references: [id])&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="velXcS6_VG1nVzbx7mFF-115">
           <mxGeometry x="-20" y="45" width="300" height="17" as="geometry" />
         </mxCell>
-        <mxCell id="velXcS6_VG1nVzbx7mFF-107" value="&lt;div style=&quot;text-align: left&quot;&gt;id&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;createdAt&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&amp;nbsp;updatedAt&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;user&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;userId&amp;nbsp; &amp;nbsp; Int&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;title&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;String&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;heart&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;concentration_time&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="velXcS6_VG1nVzbx7mFF-115">
+        <mxCell id="velXcS6_VG1nVzbx7mFF-107" value="&lt;div style=&quot;text-align: left&quot;&gt;id&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;createdAt&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&amp;nbsp;updatedAt&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;user&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;userId&amp;nbsp; &amp;nbsp; Int&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;title&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;String&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;heart&amp;nbsp; &amp;nbsp; &amp;nbsp;Int&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;concentration_time&amp;nbsp;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="velXcS6_VG1nVzbx7mFF-115">
           <mxGeometry x="-40" y="45" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="velXcS6_VG1nVzbx7mFF-147" value="Int" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="velXcS6_VG1nVzbx7mFF-115">
+          <mxGeometry x="70" y="100" width="50" height="22" as="geometry" />
         </mxCell>
         <mxCell id="velXcS6_VG1nVzbx7mFF-126" value="String?" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="velXcS6_VG1nVzbx7mFF-1">
           <mxGeometry x="-10" y="627" width="60" height="13" as="geometry" />
