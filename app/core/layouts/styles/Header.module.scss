@@ -1,31 +1,11 @@
-$buttonColorLeft: #2e8b57;
-$buttonColorMiddle: #228b22;
-$buttonColorRight: #32cd32;
+$HeaderColor: #367cda;
 
 .headerNav {
   width: 100%;
   height: 60px;
-  border-top: 1px solid #eaeaea;
-  background: -moz-linear-gradient(
-    left,
-    $buttonColorLeft,
-    $buttonColorMiddle 30%,
-    $buttonColorRight
-  );
-  background: -webkit-linear-gradient(
-    left,
-    $buttonColorLeft,
-    $buttonColorMiddle 50%,
-    $buttonColorRight
-  );
-  background: linear-gradient(
-    to right,
-    $buttonColorLeft,
-    $buttonColorMiddle 50%,
-    $buttonColorRight
-  );
+  color: aliceblue;
+  background: $HeaderColor;
   width: 100%;
-  opacity: 0.8;
   box-sizing: border-box;
   position: fixed;
   top: 0;

@@ -7,7 +7,7 @@ const Header: BlitzLayout = () => {
     <>
       <nav className={styles.headerNav}>
         <ul className={styles.headerUl}>
-          <li className={styles.headerLi}>まいにち名言</li>
+          <li className={styles.headerLi}>ココロ・タスク</li>
           <li className={styles.headerLi}>
             <Link href="/">
               <a className={styles.headerHref}>home</a>
@@ -15,17 +15,22 @@ const Header: BlitzLayout = () => {
           </li>
           <li>
             <Link href="/profile">
-              <a className={styles.headerHref}>profile</a>
+              <a className={styles.headerHref}>プロフィール</a>
             </Link>
           </li>
           <li>
-            <Link href="/management">
-              <a className={styles.headerHref}>management</a>
+            <Link href="/task">
+              <a className={styles.headerHref}>タスク</a>
             </Link>
           </li>
           <li>
-            <Link href="/meigen">
-              <a className={styles.headerHref}>meigen</a>
+            <Link href="/timeline">
+              <a className={styles.headerHref}>タイムライン</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/tweet">
+              <a className={styles.headerHref}>つぶやき</a>
             </Link>
           </li>
         </ul>

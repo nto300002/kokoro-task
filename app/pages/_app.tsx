@@ -1,3 +1,6 @@
+import Footer from "app/core/layouts/Footer"
+import Header from "app/core/layouts/Header"
+import Layout from "app/core/layouts/Layout"
 import {
   AppProps,
   ErrorBoundary,
@@ -14,7 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
       FallbackComponent={RootErrorFallback}
       onReset={useQueryErrorResetBoundary().reset}
     >
-      {getLayout(<Component {...pageProps} />)}
+      <Layout>
+        <Header />
+        {getLayout(<Component {...pageProps} />)}
+        <Footer />
+      </Layout>
     </ErrorBoundary>
   )
 }
