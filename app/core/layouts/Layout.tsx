@@ -16,6 +16,7 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
           <div className={styles.container}>{children}</div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

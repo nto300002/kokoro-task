@@ -1,10 +1,12 @@
 import { BlitzLayout } from "blitz"
 import { Link } from "blitz"
+import MenuIcon from "../components/atoms/menu/MenuIcon"
 import styles from "./styles/Header.module.scss"
 
 const Header: BlitzLayout = () => {
   return (
     <>
+      <MenuIcon />
       <nav className={styles.headerNav}>
         <ul className={styles.headerUl}>
           <li className={styles.headerLi}>ココロ・タスク</li>

@@ -5,11 +5,14 @@ $HeaderColor: #367cda;
   height: 60px;
   color: aliceblue;
   background: $HeaderColor;
+  opacity: 0.7;
+  padding-top: 5px;
   width: 100%;
   box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3000;
 }
 
 .headerUl {
