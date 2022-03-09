@@ -15,23 +15,15 @@ $HeaderColor: #367cda;
   z-index: 3000;
 }
 
-.headerUl {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
+.link {
+  color: white;
+  text-decoration: none;
 }
 
-.headerLi {
+.ul {
   display: flex;
-  &:nth-child(1) {
-    size: 33px;
-    margin-right: 55%;
-  }
 }
 
-.headerHref {
-  display: flex;
-  color: #7fffd4;
-  padding: 5px;
+.li_right {
+  margin-left: 70%;
 }

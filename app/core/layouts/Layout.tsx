@@ -10,9 +10,8 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <div className={styles.body}>
           <Head>
             <title>{title || "supportive-push"}</title>
-            <Header />
           </Head>
-
+          <Header />
           <div className={styles.container}>{children}</div>
         </div>
       </div>

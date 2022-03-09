@@ -1,0 +1,19 @@
+@import "./titleAnimation";
+$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+.animeteTitle_inview {
+  font-size: 25px;
+  display: inline-block;
+  text-shadow: 0px 2px 2px #3e3e3e;
+  z-index: 5000;
+}
+
+.animeteTitle {
+  transition: all $easeOutSine 0.3s;
+  &:hover {
+    cursor: pointer;
+    @include animation(shadow);
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
