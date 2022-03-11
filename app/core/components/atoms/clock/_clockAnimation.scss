@@ -10,12 +10,23 @@
   animation-fill-mode: both;
 }
 
-@include keyframes(updawn) {
-  0%,
-  100% {
-    transform: translateY(10px);
-  }
+@include keyframes(backgroundColor) {
+  0% {
+    background: #ffe6e1;
+  } /*変化させたい色*/
+  25% {
+    background: #fdcb9e;
+  } /*変化させたい色*/
   50% {
-    transform: translateY(-10px);
-  }
+    background: #fdcbc1;
+  } /*変化させたい色*/
+  75% {
+    background: #ffff8c;
+  } /*変化させたい色*/
+  90% {
+    background: #b2dffb;
+  } /*変化させたい色*/
+  100% {
+    background: #ffe6e1;
+  } /*変化させたい色*/
 }

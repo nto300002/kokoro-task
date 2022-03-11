@@ -23,25 +23,27 @@ export const GlassmorphismAnalogClock = () => {
   }, [])
 
   return (
-    <div className={styles.screen}>
-      <div className={styles.container}>
-        <div className={styles.box}>
-          <div className={styles.clock}>
-            {/* hour hand */}
-            <div className={styles.handCountainer}>
-              <div ref={hRef} className={styles.hour}></div>
-            </div>
-            {/* minutes hand */}
-            <div className={styles.handCountainer}>
-              <div ref={minRef} className={styles.minutes}></div>
-            </div>
-            {/* seconds hand */}
-            <div className={styles.handCountainer}>
-              <div ref={secRef} className={styles.seconds}></div>
+    <>
+      <div className={styles.screen}>
+        <div className={styles.container}>
+          <div className={styles.box}>
+            <div className={styles.clock}>
+              {/* hour hand */}
+              <div className={styles.handCountainer}>
+                <div ref={hRef} className={styles.hour}></div>
+              </div>
+              {/* minutes hand */}
+              <div className={styles.handCountainer}>
+                <div ref={minRef} className={styles.minutes}></div>
+              </div>
+              {/* seconds hand */}
+              <div className={styles.handCountainer}>
+                <div ref={secRef} className={styles.seconds}></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
