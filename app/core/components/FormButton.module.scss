@@ -1,0 +1,36 @@
+$buttonColorLeft: #52f8f1;
+$buttonColorMiddle: #41bdf8;
+$buttonColorRight: #3285fe;
+$boxShadow: #cdcdcd;
+
+.submitButton {
+  width: 200px;
+  height: 45px;
+  margin-left: 5em;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px $boxShadow;
+  border: none;
+  background: -moz-linear-gradient(
+    left,
+    $buttonColorLeft,
+    $buttonColorMiddle 30%,
+    $buttonColorRight
+  );
+  background: -webkit-linear-gradient(
+    left,
+    $buttonColorLeft,
+    $buttonColorMiddle 50%,
+    $buttonColorRight
+  );
+  background: linear-gradient(
+    to right,
+    $buttonColorLeft,
+    $buttonColorMiddle 50%,
+    $buttonColorRight
+  );
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px gray;
+  }
+}
