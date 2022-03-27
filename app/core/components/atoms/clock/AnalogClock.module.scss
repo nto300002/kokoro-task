@@ -1,5 +1,9 @@
 @import "./clockAnimation";
 
+$textShadow: 0 -1px 0 #fff, 0 1px 0 #828282, 0 2px 0 #6f6f6f, 0 3px 0 #717171, 0 4px 0 #595959,
+  0 5px 0 #545454, 0 6px 0 #3a3a3a, 0 22px 30px rgba(0, 0, 0, 0.9);
+$textColor: rgb(169, 169, 169);
+
 @mixin template_flex {
   display: flex;
   justify-content: center;
@@ -62,9 +66,8 @@
       width: 400px;
       height: 60px;
       border-radius: 50%;
-      text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828,
-        0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e,
-        0 10px 0 #1c1c1c, 0 22px 30px rgba(0, 0, 0, 0.9);
+      text-shadow: $textShadow;
+      color: $textColor;
     }
     &::after {
       z-index: 999;
@@ -77,6 +80,8 @@
       width: 400px;
       height: 60px;
       border-radius: 50%;
+      text-shadow: $textShadow;
+      color: $textColor;
     }
   }
 

@@ -1,6 +1,7 @@
 import Footer from "app/core/layouts/Footer"
 import Header from "app/core/layouts/Header"
 import Layout from "app/core/layouts/Layout"
+import "../core/layouts/styles/reset.scss"
 import {
   AppProps,
   ErrorBoundary,
@@ -8,8 +9,10 @@ import {
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
 } from "blitz"
+import { RecoilRoot } from "recoil"
+import NoSSR from "@mpth/react-no-ssr"
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
@@ -19,8 +22,9 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <Layout>
         <Header />
-        {getLayout(<Component {...pageProps} />)}
-        <Footer />
+        <NoSSR>
+          <RecoilRoot>{getLayout(<Component {...pageProps} />)}</RecoilRoot>
+        </NoSSR>
       </Layout>
     </ErrorBoundary>
   )
