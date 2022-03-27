@@ -8,7 +8,8 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "seed": "ts-node --compilerOptions '{\"isolatedModules\":false}' prisma/seed.ts"
   },
   "prettier": {
     "semi": false,
@@ -46,5 +47,8 @@
     "prisma-erd-generator": "0.9.0",
     "typescript": "~4.5"
   },
-  "private": true
+  "private": true,
+  "exclude": [
+    "prisma/seed.ts"
+  ]
 }
