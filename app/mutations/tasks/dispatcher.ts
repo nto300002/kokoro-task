@@ -1,6 +1,6 @@
 import { useRecoilCallback } from "recoil"
 import { taskListState } from "./task-status"
-import { addTaskAPI, updateTaskAPI, deleteTaskAPI } from "app/api/task/api"
+import { addTaskAPI, updateTaskAPI, deleteTaskAPI } from "app/mutations/tasks/api"
 
 export const useCreateDispatcher = () => {
   const addTask = useRecoilCallback(

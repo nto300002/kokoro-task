@@ -1,5 +1,5 @@
 import { atom, selector, useRecoilValue } from "recoil"
-import { fetchTaskListAPI } from "../../api/task/api"
+import { fetchTaskListAPI } from "./api"
 
 export interface TaskItem {
   id: number
