@@ -10,7 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const task = await db.task.create({
         data: {
           title: req.body.title,
-          user: req.body.user,
         },
       })
       return res.status(200).json(task)
