@@ -2,7 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js",
-  "/home": "pages/home.js",
-  "/api/rpc/users/getCurrentUser": "pages/api/rpc/users/getCurrentUser.js"
+  "/task/[taskId]": "pages/task/[taskId].js",
+  "/task/[taskId]/edit": "pages/task/[taskId]/edit.js"
 }
