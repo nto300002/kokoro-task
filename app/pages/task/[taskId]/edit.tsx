@@ -2,8 +2,8 @@ import { Suspense } from "react"
 import { Head, Link, useRouter, useQuery, useMutation, useParam, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getTask from "app/pages/task/queries/getTask"
-import updateTask from "app/pages/task/mutations/updateTask"
-import { TaskForm, FORM_ERROR } from "app/pages/task/components/TaskForm"
+import editTask from "app/pages/task/mutations/editTask"
+import { TaskEditForm, FORM_ERROR } from "app/pages/task/components/TaskEditForm"
 
 export const EditTask = () => {
   const router = useRouter()
@@ -16,7 +16,7 @@ export const EditTask = () => {
       staleTime: Infinity,
     }
   )
-  const [updateTaskMutation] = useMutation(updateTask)
+  const [editTaskMutation] = useMutation(editTask)
 
   return (
     <>
@@ -28,7 +28,7 @@ export const EditTask = () => {
         <h1>Edit Task {task.id}</h1>
         <pre>{JSON.stringify(task, null, 2)}</pre>
 
-        <TaskForm
+        <TaskEditForm
           submitText="Update Task"
           // TODO use a zod schema for form validation
           //  - Tip: extract mutation's schema into a shared `validations.ts` file and
@@ -37,8 +37,9 @@ export const EditTask = () => {
           initialValues={task}
           onSubmit={async (values) => {
             try {
-              const updated = await updateTaskMutation({
+              const updated = await editTaskMutation({
                 id: task.id,
+                concentration_time: task.concentration_time,
                 ...values,
               })
               await setQueryData(updated)

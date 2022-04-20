@@ -10,28 +10,27 @@ const NewTaskPage: BlitzPage = () => {
 
   return (
     <div>
-      <h1>Create New Task</h1>
-      <Suspense fallback={<div>loading...</div>}>
-        <TaskForm
-          submitText="Create Task"
-          // TODO use a zod schema for form validation
-          //  - Tip: extract mutation's schema into a shared `validations.ts` file and
-          //         then import and use it here
-          // schema={CreateTask}
-          // initialValues={{}}
-          onSubmit={async (values) => {
-            try {
-              const task = await createTaskMutation(values)
-              router.push(Routes.ShowTaskPage({ taskId: task.id }))
-            } catch (error: any) {
-              console.error(error)
-              return {
-                [FORM_ERROR]: error.toString(),
-              }
+      <h1>新しいタスク追加</h1>
+
+      <TaskForm
+        submitText="Create Task"
+        // TODO use a zod schema for form validation
+        //  - Tip: extract mutation's schema into a shared `validations.ts` file and
+        //         then import and use it here
+        // schema={CreateTask}
+        // initialValues={{}}
+        onSubmit={async (values) => {
+          try {
+            const task = await createTaskMutation(values)
+            router.push(Routes.ShowTaskPage({ taskId: task.id }))
+          } catch (error: any) {
+            console.error(error)
+            return {
+              [FORM_ERROR]: error.toString(),
             }
-          }}
-        />
-      </Suspense>
+          }
+        }}
+      />
 
       <p>
         <Link href={Routes.TasksPage()}>

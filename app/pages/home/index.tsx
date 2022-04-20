@@ -5,6 +5,7 @@ import styles from "app/core/components/auth/authLogin.module.scss"
 import { Suspense } from "react"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { useMutation } from "next/data-client"
+import Link from "next/link"
 
 export default function Home() {
   const session = useCurrentUser()
@@ -19,6 +20,13 @@ export default function Home() {
             <p>{session?.email}</p>
             <p>{session?.role}</p>
           </div>
+          <Link href="/task">
+            <a>タスク投稿へ　</a>
+          </Link>
+          <br />
+          <Link href="/tweet">
+            <a>ちょっとつぶやく</a>
+          </Link>
           <button
             className="button small"
             onClick={async () => {

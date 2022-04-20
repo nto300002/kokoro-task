@@ -17,8 +17,8 @@ export const Task = () => {
       </Head>
 
       <div>
-        <h1>{task.title}</h1>
-        <pre>{JSON.stringify(task, null, 2)}</pre>
+        <h1>title:{task.title}</h1>
+        <p>{task.concentration_time}分頑張りました</p>
 
         <Link href={Routes.EditTaskPage({ taskId: task.id })}>
           <a>編集</a>

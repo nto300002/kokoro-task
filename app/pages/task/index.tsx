@@ -2,6 +2,7 @@ import { Suspense } from "react"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes, useSession } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getTasks from "app/pages/task/queries/getTasks"
+import NewTaskPage from "./new"
 
 const ITEMS_PER_PAGE = 100
 
@@ -48,14 +49,9 @@ const TasksPage: BlitzPage = () => {
       </Head>
 
       <div>
-        <p>
-          <Link href={Routes.NewTaskPage()}>
-            <a>タスクを追加する</a>
-          </Link>
-        </p>
-
         <Suspense fallback={<div>Loading...</div>}>
           <TasksList />
+          <NewTaskPage />
         </Suspense>
       </div>
     </>
