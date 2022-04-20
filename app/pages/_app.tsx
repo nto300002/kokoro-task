@@ -11,22 +11,23 @@ import {
 } from "blitz"
 import { RecoilRoot } from "recoil"
 import NoSSR from "@mpth/react-no-ssr"
+import { Suspense } from "react"
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
-    <ErrorBoundary
-      FallbackComponent={RootErrorFallback}
-      onReset={useQueryErrorResetBoundary().reset}
-    >
-      <Layout>
-        <Header />
-        <NoSSR>
-          <RecoilRoot>{getLayout(<Component {...pageProps} />)}</RecoilRoot>
-        </NoSSR>
-      </Layout>
-    </ErrorBoundary>
+    <Suspense fallback={<div>loading</div>}>
+      <ErrorBoundary
+        FallbackComponent={RootErrorFallback}
+        onReset={useQueryErrorResetBoundary().reset}
+      >
+        <Layout>
+          <Header />
+          <NoSSR>{getLayout(<Component {...pageProps} />)}</NoSSR>
+        </Layout>
+      </ErrorBoundary>
+    </Suspense>
   )
 }
 
