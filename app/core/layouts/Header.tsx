@@ -1,10 +1,13 @@
 import { BlitzLayout } from "blitz"
 import { Link } from "blitz"
+import { Suspense } from "react"
 import MenuIcon from "../components/atoms/menu/MenuIcon"
 import TitleLogo from "../components/atoms/title/TitleLogo"
+import { useCurrentUser } from "../hooks/useCurrentUser"
 import styles from "./styles/Header.module.scss"
 
 const Header: BlitzLayout = () => {
+  const session = useCurrentUser()
   return (
     <>
       <nav className={styles.headerNav}>
@@ -16,9 +19,13 @@ const Header: BlitzLayout = () => {
               </a>
             </Link>
           </li>
+
           <li className={styles.li_right}>
             <MenuIcon />
           </li>
+          <Suspense fallback={<div>loading</div>}>
+            <li>{session?.email}</li>
+          </Suspense>
         </ul>
       </nav>
     </>
