@@ -6,58 +6,27 @@ import Layout from "app/core/layouts/Layout"
 import SignupForm from "app/core/components/auth/SignupForm"
 import { Router } from "next/dist/client/router"
 
-const UserInfo = () => {
-  const currentUser = useCurrentUser()
-  const [logoutMutation] = useMutation(logout)
-  const router = useRouter()
-
-  if (currentUser) {
-    return (
-      <>
-        <button
-          className="button small"
-          onClick={async () => {
-            await logoutMutation()
-          }}
-        >
-          Logout
-        </button>
-        <div>
-          <code>{currentUser.id}</code>
-          <br />
-          User role: <code>{currentUser.role}</code>
-          <br />
-          User name: <code>{currentUser.name}</code>
-        </div>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <Suspense fallback={<div>loading...</div>}>
-          <SignupForm onSuccess={() => router.push(Routes.Home())} />
-        </Suspense>
-
-        <Link href="/auth/login">
-          <a className="button small">
-            <strong>Login</strong>
-          </a>
-        </Link>
-        <a href="/api/auth/google" className="button small">
-          <strong>GoogleLogin</strong>
-        </a>
-      </>
-    )
-  }
-}
-
-const SignIn: BlitzPage = () => {
+const NotSignIn: BlitzPage = () => {
   return (
     <div className="container">
       <main>
         <div className="buttons" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
           <Suspense fallback="Loading...">
-            <UserInfo />
+            <h1>
+              {" "}
+              <Link href="/auth/login">
+                <a className="button small">
+                  <strong>Login</strong>
+                </a>
+              </Link>
+              , または
+              <Link href="/auth/signIn">
+                <a className="button small">
+                  <strong>signIn</strong>
+                </a>
+              </Link>
+              をしてください
+            </h1>
           </Suspense>
         </div>
 
@@ -74,7 +43,7 @@ const SignIn: BlitzPage = () => {
         </a>
       </footer>
 
-      <style jsx global>{`
+      <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;700&display=swap");
 
         html,
@@ -152,13 +121,13 @@ const SignIn: BlitzPage = () => {
         .button {
           font-size: 1rem;
           background-color: #6700eb;
-          padding: 1rem 2rem;
+          padding: 0.2rem 0.4rem;
           color: #f4f4f4;
           text-align: center;
         }
 
         .button.small {
-          padding: 0.5rem 1rem;
+          padding: 0.2rem 0.5rem;
         }
 
         .button:hover {
@@ -210,9 +179,9 @@ const SignIn: BlitzPage = () => {
   )
 }
 
-SignIn.suppressFirstRenderFlicker = true
+NotSignIn.suppressFirstRenderFlicker = true
 // TODO: 関数名に名前を付けて解消する
 // eslint-disable-next-line
-SignIn.getLayout = (page) => <Layout title="Sign In">{page}</Layout>
+NotSignIn.getLayout = (page) => <Layout title="Sign In">{page}</Layout>
 
-export default SignIn
+export default NotSignIn
