@@ -50,7 +50,7 @@ export const LoginForm = (props: LoginFormProps) => {
 
       <div style={{ marginTop: "1rem" }}>
         Or
-        <Link href="/auth/signup">サインアップ</Link>
+        <Link href="/auth/signIn">サインイン</Link>
       </div>
     </div>
   )

@@ -23,9 +23,7 @@ const Header: BlitzLayout = () => {
           <li className={styles.li_right}>
             <MenuIcon />
           </li>
-          <Suspense fallback={<div>loading</div>}>
-            <li>{session?.email}</li>
-          </Suspense>
+          <li>{session?.email}</li>
         </ul>
       </nav>
     </>

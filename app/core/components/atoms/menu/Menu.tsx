@@ -23,8 +23,8 @@ const Menu = () => {
             </Link>
           </li>
           <li className={styles.list_li}>
-            <Link href="/timeline">
-              <a className={styles.list_href}>タイムライン</a>
+            <Link href="/music">
+              <a className={styles.list_href}>癒やしの音楽</a>
             </Link>
           </li>
           <li className={styles.list_li}>
