@@ -3,7 +3,7 @@ import { Link, BlitzPage, useMutation, useRouter, Routes } from "blitz"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import logout from "app/mutations/auth/logout"
 import Layout from "app/core/layouts/Layout"
-import SignupForm from "app/core/components/auth/SignupForm"
+import SignupForm from "app/core/components/authForm/SignupForm"
 import { Router } from "next/dist/client/router"
 
 const NotSignIn: BlitzPage = () => {

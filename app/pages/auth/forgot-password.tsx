@@ -1,7 +1,7 @@
 import { BlitzPage, useMutation } from "blitz"
 import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
-import { ForgotPassword } from "app/core/components/auth/validations"
+import { ForgotPassword } from "app/core/components/authForm/validations"
 import forgotPassword from "app/mutations/auth/forgotPassword"
 import Layout from "app/core/layouts/Layout"
 
