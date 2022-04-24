@@ -1,0 +1,32 @@
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@include keyframes(backgroundColor) {
+  0% {
+    background: #e1d6ff;
+  } /*変化させたい色*/
+  25% {
+    background: #ffddbe;
+  } /*変化させたい色*/
+  50% {
+    background: #fdcbc1;
+  } /*変化させたい色*/
+  75% {
+    background: #c0fff7;
+  } /*変化させたい色*/
+  90% {
+    background: #b2dffb;
+  } /*変化させたい色*/
+  100% {
+    background: #b5eeff;
+  } /*変化させたい色*/
+}

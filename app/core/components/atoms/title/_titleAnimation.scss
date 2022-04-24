@@ -1,0 +1,26 @@
+@import "../clock/clockAnimation";
+
+@include keyframes(title) {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) skewY(10deg) skewX(10deg);
+    filter: blur(10px);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(shadow) {
+  0%,
+  35% {
+  }
+  100% {
+    letter-spacing: 1px;
+  }
+}

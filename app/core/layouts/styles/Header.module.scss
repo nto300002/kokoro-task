@@ -1,0 +1,29 @@
+$HeaderColor: #367cda;
+
+.headerNav {
+  width: 100%;
+  height: 60px;
+  color: aliceblue;
+  background: $HeaderColor;
+  opacity: 0.7;
+  padding-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.ul {
+  display: flex;
+}
+
+.li_right {
+  margin-left: 60%;
+}

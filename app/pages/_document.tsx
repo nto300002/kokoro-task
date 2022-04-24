@@ -1,4 +1,5 @@
 import { Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/ } from "blitz"
+import { Suspense } from "react"
 
 class MyDocument extends Document {
   // Only uncomment if you need to customize this behaviour
@@ -9,13 +10,15 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
-        <DocumentHead />
-        <body>
-          <Main />
-          <BlitzScript />
-        </body>
-      </Html>
+      <Suspense fallback={<div>loading...</div>}>
+        <Html lang="en">
+          <DocumentHead />
+          <body>
+            <Main />
+            <BlitzScript />
+          </body>
+        </Html>
+      </Suspense>
     )
   }
 }

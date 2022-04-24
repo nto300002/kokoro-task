@@ -1,4 +1,5 @@
 import { Head, ErrorComponent } from "blitz"
+import { Suspense } from "react"
 
 // ------------------------------------------------------
 // This page is rendered if a route match is not found
@@ -13,7 +14,9 @@ export default function Page404() {
           {statusCode}: {title}
         </title>
       </Head>
-      <ErrorComponent statusCode={statusCode} title={title} />
+      <Suspense fallback={<div>loading...</div>}>
+        <ErrorComponent statusCode={statusCode} title={title} />
+      </Suspense>
     </>
   )
 }

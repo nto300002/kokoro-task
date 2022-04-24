@@ -1,8 +1,43 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "files.exclude": {
+    // Default Setting
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+
+    // Custom Setting
+    // * ここに記述したものはVSCode上に表示されなくなります。表示しておきたいものは残してください。
+    // * どの程度CPU占有率に影響するかは使用している拡張機能にも依ります。
+
+    // node_modulesやbowser componentsのようなpackageなどを管理するためのディレクトリ
+    "**/node_modules": true,
+
+    // Cache用のディレクトリやファイル
+    "**/.cache": true,
+    // Buildディレクトリやファイル
+    "**/dist": true
+    // "**/build": true
   },
-  "jest.autoRun": "off"
+  "files.watcherExclude": {
+    // Default Settings
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+
+    // Custom Setting
+    // * ここに記述したものはVSCodeが監視しなくなるため、変更されてもautoSaveやformatOnSavenなどが発火しなくなります。
+    // * それぞれの指定が、どの程度CPU占有率に影響するかは使用している拡張機能にも依ります
+
+    // Cache用のディレクトリやファイル
+    "**/.cache": true,
+    // Buildディレクトリやファイル
+    "**/dist": true
+    // "**/build": true
+
+    // 画像や動画用のディレクトリやファイル
+    // "**/images": true
+    // "**/movies": true
+  }
 }
