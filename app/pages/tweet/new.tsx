@@ -19,7 +19,7 @@ const NewTweetPage: BlitzPage = () => {
         onSubmit={async (values) => {
           try {
             const tweet = await createTweetMutation(values)
-            router.push({ pathname: "/tweet/:id" })
+            router.push(Routes.NewTweetPage({ tweetId: tweet.id }))
           } catch (error: any) {
             alert("errorです")
           }
