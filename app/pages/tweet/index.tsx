@@ -31,10 +31,10 @@ export const TweetsList = () => {
       </ul>
 
       <button disabled={page === 0} onClick={goToPreviousPage}>
-        前
+        ＜前
       </button>
       <button disabled={!hasMore} onClick={goToNextPage}>
-        次
+        次＞
       </button>
     </div>
   )
