@@ -13,15 +13,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/task": ["static/chunks/webpack.js", "static/chunks/main.js", "static/chunks/pages/task.js"],
     "/task/[taskId]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/task/[taskId].js"
-    ],
-    "/task/[taskId]/edit": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/task/[taskId]/edit.js"
     ]
   },
   "ampFirstPages": []

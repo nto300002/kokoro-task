@@ -1,5 +1,5 @@
 import { useRouter, BlitzPage } from "blitz"
-import { LoginForm } from "app/core/components/auth/LoginForm"
+import { LoginForm } from "app/core/components/authForm/LoginForm"
 import Layout from "app/core/layouts/Layout"
 import { Suspense } from "react"
 

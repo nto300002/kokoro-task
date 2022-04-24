@@ -1,7 +1,7 @@
 import { GlassmorphismAnalogClock } from "app/core/components/atoms/clock/AnalogClock"
 import logout from "app/mutations/auth/logout"
 
-import styles from "app/core/components/auth/authLogin.module.scss"
+import styles from "app/core/components/authForm/authLogin.module.scss"
 import { Suspense } from "react"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import { useMutation } from "next/data-client"
