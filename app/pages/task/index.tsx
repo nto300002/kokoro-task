@@ -45,7 +45,7 @@ const TasksPage: BlitzPage = () => {
   return (
     <>
       <Head>
-        <title>Tasks</title>
+        <title>タスク一覧</title>
       </Head>
 
       <div>

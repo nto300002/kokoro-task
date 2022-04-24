@@ -1,14 +1,19 @@
-import { Suspense } from "react"
+import { createContext, Suspense, useContext, useState } from "react"
 import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getTask from "app/pages/task/queries/getTask"
 import deleteTask from "app/pages/task/mutations/deleteTask"
+import CountDownTimer from "app/core/components/timer"
+import { modalContext, useModal } from "../../core/components/timer/context/modal"
+
+export const ModalClose = createContext(false)
 
 export const Task = () => {
   const router = useRouter()
   const taskId = useParam("taskId", "number")
   const [deleteTaskMutation] = useMutation(deleteTask)
   const [task] = useQuery(getTask, { id: taskId })
+  const ctx = useModal()
 
   return (
     <>
@@ -18,7 +23,8 @@ export const Task = () => {
 
       <div>
         <h1>title:{task.title}</h1>
-        <p>{task.concentration_time}分頑張りました</p>
+        <p>集中できた時間（分）</p>
+        <p>{task.concentration_time}</p>
 
         <Link href={Routes.EditTaskPage({ taskId: task.id })}>
           <a>編集</a>
@@ -36,6 +42,10 @@ export const Task = () => {
         >
           削除
         </button>
+
+        <modalContext.Provider value={ctx}>
+          <CountDownTimer />
+        </modalContext.Provider>
       </div>
     </>
   )
@@ -46,7 +56,7 @@ const ShowTaskPage: BlitzPage = () => {
     <div>
       <p>
         <Link href={Routes.TasksPage()}>
-          <a>Tasks</a>
+          <a>タスク一覧に戻る</a>
         </Link>
       </p>
 

@@ -34,7 +34,7 @@ const NewTaskPage: BlitzPage = () => {
 
       <p>
         <Link href={Routes.TasksPage()}>
-          <a>Tasks</a>
+          <a>タスク一覧へ</a>
         </Link>
       </p>
     </div>
