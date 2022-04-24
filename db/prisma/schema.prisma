@@ -44,7 +44,6 @@ model Tweet {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   emotion   String
-  
 }
 
 model Task {
