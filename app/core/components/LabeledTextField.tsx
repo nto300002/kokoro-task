@@ -4,7 +4,8 @@ import { useField } from "react-final-form"
 export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
   name: string
   label: string
-  type?: "text" | "password" | "email" | "number"
+  value?: string
+  type?: "text" | "password" | "email" | "number" | "radio" | "color" | "range"
   outerProps?: PropsWithoutRef<JSX.IntrinsicElements["div"]>
 }
 
