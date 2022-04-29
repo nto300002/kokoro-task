@@ -29,7 +29,10 @@ export const TweetsList = () => {
           <li key={tweet.id}>
             <p>あなたは{tweet.text}とつぶやいた</p>
             <p>{tweet.emotion}...!</p>
-            <button
+            <Link href={{ pathname: "/tweet/[tweetId]", query: { tweetId: tweet.id } }}>
+              <a>つぶやきを見る、コメントする</a>
+            </Link>
+            {/* <button
               type="button"
               onClick={async () => {
                 if (window.confirm("削除しますか？")) {
@@ -38,7 +41,7 @@ export const TweetsList = () => {
               }}
             >
               削除する
-            </button>
+            </button> */}
           </li>
         ))}
       </ul>
