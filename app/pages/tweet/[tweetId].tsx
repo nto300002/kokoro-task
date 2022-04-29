@@ -3,7 +3,6 @@ import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Rout
 import Layout from "app/core/layouts/Layout"
 import getTweet from "./queries/getTweet"
 import deleteTweet from "./mutations/deleteTweet"
-import updateTweet from "./mutations/updateTweet"
 import Tweet from "."
 
 export const TweetId = () => {
@@ -36,7 +35,7 @@ export const TweetId = () => {
   )
 }
 
-const ShowTweetPage: BlitzPage = () => {
+export const ShowTweetPage: BlitzPage = () => {
   return (
     <div>
       <p>
