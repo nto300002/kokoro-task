@@ -1,8 +1,12 @@
 import Layout from "app/core/layouts/Layout"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "blitz"
 import getTweets from "app/pages/tweet/queries/getTweets"
-import { Suspense } from "react"
-import NewTweetPage from "./new"
+import React, { Suspense, useEffect, useState } from "react"
+import deleteTweetMutation from "./mutations/deleteTweet"
+import { tweetFliterData, TweetFilter } from "./components/filter/tweetFilter"
+import { useQuery } from "react-query"
+import getTweet from "./queries/getTweet"
+import getEmotion from "./components/filter/tweetEmotionList"
 
 const ITEMS_PER_PAGE = 100
 
@@ -23,9 +27,21 @@ export const TweetsList = () => {
       <ul>
         {tweets.map((tweet) => (
           <li key={tweet.id}>
-            <Link href="/tweet/:id">
-              <a>{tweet.text}</a>
+            <p>あなたは{tweet.text}とつぶやいた</p>
+            <p>{tweet.emotion}...!</p>
+            <Link href={{ pathname: "/tweet/[tweetId]", query: { tweetId: tweet.id } }}>
+              <a>つぶやきを見る、コメントする</a>
             </Link>
+            {/* <button
+              type="button"
+              onClick={async () => {
+                if (window.confirm("削除しますか？")) {
+                  await deleteTweetMutation({ id: tweet.id }, tweet)
+                }
+              }}
+            >
+              削除する
+            </button> */}
           </li>
         ))}
       </ul>
@@ -44,19 +60,17 @@ const Tweet: BlitzPage = () => {
   return (
     <div className="container">
       <Head>
-        <title>今の感情を吐き出してみましょう</title>
+        <title>つぶやき日記</title>
       </Head>
 
       <div>
-        <p>
-          <Link href="/tweet/new">
-            <a>感情をつぶやく</a>
-          </Link>
-        </p>
+        <h2>つぶやき日記</h2>
+        <Link href={Routes.NewTweetPage()}>
+          <a>新しく作る</a>
+        </Link>
 
         <Suspense fallback={<div>Loading...</div>}>
           <TweetsList />
-          <NewTweetPage />
         </Suspense>
       </div>
     </div>

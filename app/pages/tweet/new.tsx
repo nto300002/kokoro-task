@@ -3,6 +3,8 @@ import Layout from "app/core/layouts/Layout"
 import createTweet from "./mutations/createTweet"
 import { TweetForm } from "./components/TweetForm"
 import { createTweetSchema } from "./validations"
+import { FORM_ERROR } from "app/core/components/Form"
+import error from "next/error"
 
 const NewTweetPage: BlitzPage = () => {
   const router = useRouter()
@@ -19,12 +21,19 @@ const NewTweetPage: BlitzPage = () => {
         onSubmit={async (values) => {
           try {
             const tweet = await createTweetMutation(values)
-            router.push(Routes.NewTweetPage({ tweetId: tweet.id }))
+            router.push({ pathname: "/tweet" })
+            return tweet
           } catch (error: any) {
-            alert("errorです")
+            console.error(error)
+          }
+          return {
+            [FORM_ERROR]: "すべての項目を入力してください",
           }
         }}
       />
+      <Link href="/tweet">
+        <a>つぶやき一覧に戻る</a>
+      </Link>
     </div>
   )
 }

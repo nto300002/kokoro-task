@@ -3,7 +3,6 @@ import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Rout
 import Layout from "app/core/layouts/Layout"
 import getTweet from "./queries/getTweet"
 import deleteTweet from "./mutations/deleteTweet"
-import updateTweet from "./mutations/updateTweet"
 import Tweet from "."
 
 export const TweetId = () => {
@@ -18,8 +17,11 @@ export const TweetId = () => {
         <title>{tweet.id}個目のつぶやき</title>
       </Head>
 
-      <p>{tweet.text}</p>
-      <p>{tweet.createdAt}</p>
+      <p>あなたは{tweet.text}とつぶやいた</p>
+      <p>今の気持ち：{tweet.emotion}</p>
+      {tweet.comments.map((comment) => (
+        <li key={comment.id}>コメント：{comment.text}</li>
+      ))}
 
       <button
         type="button"
@@ -36,18 +38,19 @@ export const TweetId = () => {
   )
 }
 
-const ShowTweetPage: BlitzPage = () => {
+export const ShowTweetPage: BlitzPage = () => {
   return (
     <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <TweetId />
+      </Suspense>
       <p>
         <Link href="/tweet">
           <a>つぶやきのページへ</a>
         </Link>
       </p>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Tweet />
-      </Suspense>
     </div>
   )
 }
+
+export default ShowTweetPage
