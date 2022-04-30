@@ -17,8 +17,11 @@ export const TweetId = () => {
         <title>{tweet.id}個目のつぶやき</title>
       </Head>
 
-      <p>{tweet.text}</p>
-      <p>{tweet.createdAt}</p>
+      <p>あなたは{tweet.text}とつぶやいた</p>
+      <p>今の気持ち：{tweet.emotion}</p>
+      {tweet.comments.map((comment) => (
+        <li key={comment.id}>コメント：{comment.text}</li>
+      ))}
 
       <button
         type="button"
@@ -38,15 +41,16 @@ export const TweetId = () => {
 export const ShowTweetPage: BlitzPage = () => {
   return (
     <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <TweetId />
+      </Suspense>
       <p>
         <Link href="/tweet">
           <a>つぶやきのページへ</a>
         </Link>
       </p>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <Tweet />
-      </Suspense>
     </div>
   )
 }
+
+export default ShowTweetPage

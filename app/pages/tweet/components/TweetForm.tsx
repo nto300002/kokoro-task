@@ -7,6 +7,7 @@ export function TweetForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
   return (
     <Form<S> {...props}>
       <LabeledTextField name="text" label="Text" placeholder="Text" />
+      <LabeledTextField name="comments.text" label="Comment" placeholder="Text" />
       <ul>
         <li>
           <LabeledTextField name="emotion" label="" type="radio" value="嬉しい" />
