@@ -1,0 +1,10 @@
+{
+  "c": ["webpack"],
+  "r": ["pages/tweet/[tweetId]"],
+  "m": [
+    "./app/pages/tweet/[tweetId].tsx",
+    "./app/pages/tweet/mutations/deleteTweet.ts",
+    "./app/pages/tweet/queries/getTweet.ts",
+    "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftweet%2F%5BtweetId%5D&absolutePagePath=%2FUsers%2Fyasuda%2FDownloads%2Fkokoro-task%2Fapp%2Fpages%2Ftweet%2F%5BtweetId%5D.tsx!"
+  ]
+}

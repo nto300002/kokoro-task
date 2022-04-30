@@ -13,11 +13,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/task": ["static/chunks/webpack.js", "static/chunks/main.js", "static/chunks/pages/task.js"],
-    "/task/[taskId]": [
+    "/tweet": ["static/chunks/webpack.js", "static/chunks/main.js", "static/chunks/pages/tweet.js"],
+    "/tweet/new": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/task/[taskId].js"
+      "static/chunks/pages/tweet/new.js"
     ]
   },
   "ampFirstPages": []
