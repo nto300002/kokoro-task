@@ -7,6 +7,8 @@ export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElem
   value?: string
   type?: "text" | "password" | "email" | "number" | "radio" | "color" | "range"
   outerProps?: PropsWithoutRef<JSX.IntrinsicElements["div"]>
+  min?: number
+  max?: number
 }
 
 export const LabeledTextField = forwardRef<HTMLInputElement, LabeledTextFieldProps>(
