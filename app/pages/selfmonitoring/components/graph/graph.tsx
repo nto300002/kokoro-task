@@ -8,11 +8,6 @@ const MonitorigGraph = () => {
 
   const data = [
     {
-      subject: "今日の調子",
-      A: monitoring!.condition_meter,
-      fullMark: 100,
-    },
-    {
       subject: "からだ",
       A: monitoring!.stamina,
       fullMark: 100,

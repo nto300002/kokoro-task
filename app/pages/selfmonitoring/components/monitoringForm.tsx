@@ -12,7 +12,7 @@ export function MonitoringForm<S extends z.ZodType<any, any>>(props: FormProps<S
           id="value"
           type="range"
           name="condition_meter"
-          label="今日の調子は"
+          label="今日はツイてる？"
           placeholder="condition"
           step={10}
         />
