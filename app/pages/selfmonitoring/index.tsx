@@ -2,6 +2,7 @@ import { BlitzPage, Link, useRouter, usePaginatedQuery } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getMonitorings from "./queries/getMonitorings"
 import { makeDocument } from "@prisma/client/runtime"
+import Calendar from "app/core/components/atoms/calendar/calendar"
 
 const ITEMS_PER_PAGE = 250
 
@@ -26,6 +27,7 @@ const SelfMonitoring: BlitzPage = () => {
       </main>
 
       <span>カレンダー</span>
+      <Calendar />
       <p>今日の調子はどう？</p>
       {monitorings.map((monitoring) => (
         <div key={monitoring.id}>
