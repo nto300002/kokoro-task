@@ -13,7 +13,7 @@ export default passportAuth({
           callbackURL:
             process.env.NODE_ENV === "production"
               ? "デプロイ先/api/auth/google/callback"
-              : "http://localhost:3004/api/auth/google/callback",
+              : "http://localhost:3000/api/auth/google/callback",
           scope: ["email", "profile"],
         },
         async function (_token, _tokenSecret, profile, done) {

@@ -13,11 +13,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/task": ["static/chunks/webpack.js", "static/chunks/main.js", "static/chunks/pages/task.js"],
-    "/task/[taskId]": [
+    "/selfmonitoring": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/task/[taskId].js"
+      "static/chunks/pages/selfmonitoring.js"
     ]
   },
   "ampFirstPages": []
