@@ -4,10 +4,6 @@ import db from "db"
 
 const UpdateProfile = z.object({
   id: number(),
-  name: z.string().optional(),
-  profile: z.string().optional(),
-  email: z.string().email().optional(),
-  heart: z.number().optional(),
 })
 
 export default resolver.pipe(
@@ -18,6 +14,7 @@ export default resolver.pipe(
       where: { id },
       data: {
         ...data,
+        heart: { increment: 1 },
       },
     })
     return profile
