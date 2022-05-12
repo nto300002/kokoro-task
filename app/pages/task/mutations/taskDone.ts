@@ -14,7 +14,6 @@ export default resolver.pipe(
       where: { id },
       data: {
         done: true,
-        exp: { increment: 1 },
       },
     })
     return task

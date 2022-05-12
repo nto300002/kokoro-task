@@ -12,7 +12,6 @@ export default resolver.pipe(resolver.zod(CreateTweet), resolver.authorize(), as
   const tweet = await db.tweet.create({
     data: {
       ...input,
-      comments: { create: input.comments },
     },
   })
   return tweet

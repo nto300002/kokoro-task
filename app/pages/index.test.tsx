@@ -18,6 +18,5 @@ test.skip("renders blitz documentation link", () => {
     profile: "washi",
     role: "USER",
     hashedPassword: "faljkfa",
-    exp: 0,
   })
 })

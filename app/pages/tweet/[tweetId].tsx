@@ -19,9 +19,6 @@ export const TweetId = () => {
 
       <p>あなたは{tweet.text}とつぶやいた</p>
       <p>今の気持ち：{tweet.emotion}</p>
-      {tweet.comments.map((comment) => (
-        <li key={comment.id}>コメント：{comment.text}</li>
-      ))}
 
       <button
         type="button"
