@@ -7,7 +7,6 @@ const DeleteTweet = z.object({
 })
 
 export default resolver.pipe(resolver.zod(DeleteTweet), resolver.authorize(), async ({ id }) => {
-  await db.tweetComment.deleteMany({ where: { tweetId: id } })
   const tweet = await db.tweet.deleteMany({ where: { id } })
 
   return tweet

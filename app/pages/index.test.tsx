@@ -18,8 +18,5 @@ test.skip("renders blitz documentation link", () => {
     profile: "washi",
     role: "USER",
     hashedPassword: "faljkfa",
-    concentration_time_total: 11,
-    heart: 1,
-    icon: "koem",
   })
 })

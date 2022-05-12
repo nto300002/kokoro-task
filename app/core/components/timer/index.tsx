@@ -83,7 +83,7 @@ export default function CountDownTimer(props) {
         </div>
       ) : (
         <div>
-          <button onClick={() => handleModalOpen()}>タスクを始める！（タイマーが起動します</button>
+          <button onClick={() => handleModalOpen()}>タイマー起動</button>
         </div>
       )}
     </>

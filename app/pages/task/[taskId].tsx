@@ -6,14 +6,37 @@ import deleteTask from "app/pages/task/mutations/deleteTask"
 import CountDownTimer from "app/core/components/timer"
 import { modalContext, useModal } from "../../core/components/timer/context/modal"
 
+import taskDone from "./mutations/taskDone"
+import taskReset from "./mutations/taskReset"
+
 export const ModalClose = createContext(false)
 
 export const Task = () => {
   const router = useRouter()
   const taskId = useParam("taskId", "number")
   const [deleteTaskMutation] = useMutation(deleteTask)
-  const [task] = useQuery(getTask, { id: taskId })
+  const [task, { refetch }] = useQuery(getTask, { id: taskId })
   const ctx = useModal()
+  const [taskDoneMutation] = useMutation(taskDone)
+  const [isDone, setDone] = useState(task.done)
+
+  const TaskDone = async (id: number) => {
+    try {
+      await taskDoneMutation({ id })
+      router.push(Routes.TasksPage())
+    } catch (error) {
+      alert(`エラーが発生しました`)
+    }
+  }
+  const [taskResetMutation] = useMutation(taskReset)
+  const TaskReset = async (id: number) => {
+    try {
+      await taskResetMutation({ id })
+      router.push(Routes.TasksPage())
+    } catch (error) {
+      alert(`エラーが発生しました`)
+    }
+  }
 
   return (
     <>
@@ -42,10 +65,21 @@ export const Task = () => {
         >
           削除
         </button>
-
+        <br />
         <modalContext.Provider value={ctx}>
           <CountDownTimer />
         </modalContext.Provider>
+        {isDone ? (
+          <>
+            <button onClick={() => TaskReset(task.id)}>進捗をリセット</button>
+            <span>完了</span>
+          </>
+        ) : (
+          <>
+            <button onClick={() => TaskDone(task.id)}>進捗をすすめる</button>
+            <span>未完了</span>
+          </>
+        )}
       </div>
     </>
   )

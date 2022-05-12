@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Heart" ALTER COLUMN "id" SET DEFAULT 1,
+ALTER COLUMN "id" DROP DEFAULT;
+DROP SEQUENCE "Heart_id_seq";

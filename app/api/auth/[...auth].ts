@@ -21,7 +21,6 @@ export default passportAuth({
           const user = await db.user.upsert({
             where: { email },
             create: {
-              heart: 1,
               email,
               name: profile.displayName,
             },

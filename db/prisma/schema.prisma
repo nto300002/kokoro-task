@@ -17,21 +17,15 @@ datasource db {
 }
 
 model User {
-  id                       Int       @id @default(autoincrement())
-  profile                  String?
-  createdAt                DateTime  @default(now())
-  updatedAt                DateTime  @updatedAt
-  name                     String?
-  email                    String    @unique
-  emailVerified            DateTime? @map(name: "email_verified")
-  hashedPassword           String?
-  role                     String    @default("USER")
-  concentration_time_total Int?
-  heart                    Int
-
-
-  icon String?
-
+  id             Int       @id @default(autoincrement())
+  profile        String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  name           String?
+  email          String    @unique
+  emailVerified  DateTime? @map(name: "email_verified")
+  hashedPassword String?
+  role           String    @default("USER")
 
   sessions Session[]
   tokens   Token[]
@@ -40,21 +34,11 @@ model User {
 }
 
 model Tweet {
-  id        Int            @id @default(autoincrement())
-  text      String
-  createdAt DateTime       @default(now())
-  updatedAt DateTime       @updatedAt
-  emotion   String
-  comments  TweetComment[]
-}
-
-model TweetComment {
   id        Int      @id @default(autoincrement())
   text      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  tweet     Tweet    @relation(fields: [tweetId], references: [id])
-  tweetId   Int
+  emotion   String
 }
 
 model Task {
@@ -63,6 +47,7 @@ model Task {
   updatedAt          DateTime @updatedAt
   title              String
   concentration_time Int?     @default(0)
+  done               Boolean  @default(false)
 }
 
 model Monitoring {

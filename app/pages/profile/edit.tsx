@@ -27,7 +27,6 @@ const EditProfile = () => {
         <p>名前　{user.name}</p>
         <p>メールアドレス　{user.email}</p>
         <p>プロフィール　{user.profile}</p>
-        <p>♥ {user.heart}</p>
       </div>
       <div>
         <ProfileForm

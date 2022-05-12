@@ -9,7 +9,6 @@ const GetTweet = z.object({
 export default resolver.pipe(resolver.zod(GetTweet), resolver.authorize(), async ({ id }) => {
   const tweet = await db.tweet.findFirst({
     where: { id },
-    include: { comments: true },
   })
 
   if (!tweet) throw new NotFoundError()
