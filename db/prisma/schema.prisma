@@ -34,21 +34,11 @@ model User {
 }
 
 model Tweet {
-  id        Int            @id @default(autoincrement())
-  text      String
-  createdAt DateTime       @default(now())
-  updatedAt DateTime       @updatedAt
-  emotion   String
-  comments  TweetComment[]
-}
-
-model TweetComment {
   id        Int      @id @default(autoincrement())
   text      String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  tweet     Tweet?   @relation(fields: [tweetId], references: [id])
-  tweetId   Int
+  emotion   String
 }
 
 model Task {
@@ -58,16 +48,6 @@ model Task {
   title              String
   concentration_time Int?     @default(0)
   done               Boolean  @default(false)
-  hearts             Heart[]
-}
-
-model Heart {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  exp       Int?
-  task      Task?    @relation(fields: [taskId], references: [id])
-  taskId    Int
 }
 
 model Monitoring {

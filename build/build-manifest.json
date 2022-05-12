@@ -13,10 +13,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/selfmonitoring": [
+    "/profile": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/selfmonitoring.js"
+      "static/chunks/pages/profile.js"
+    ],
+    "/profile/edit": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/profile/edit.js"
     ]
   },
   "ampFirstPages": []

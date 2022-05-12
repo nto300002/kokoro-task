@@ -7,7 +7,6 @@ const UpdateProfile = z.object({
   name: z.string().optional(),
   profile: z.string().optional(),
   email: z.string().email().optional(),
-  heart: z.number().optional(),
 })
 
 export default resolver.pipe(

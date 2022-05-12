@@ -1,5 +1,16 @@
-import { Suspense } from "react"
-import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes, useSession } from "blitz"
+import { Suspense, useState } from "react"
+import {
+  Head,
+  Link,
+  usePaginatedQuery,
+  useRouter,
+  BlitzPage,
+  Routes,
+  useSession,
+  useMutation,
+  useParam,
+  useQuery,
+} from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getTasks from "app/pages/task/queries/getTasks"
 import NewTaskPage from "./new"
@@ -27,6 +38,15 @@ export const TasksList = () => {
             <Link href={Routes.ShowTaskPage({ taskId: task.id })}>
               <a>{task.title}</a>
             </Link>
+            {task.done ? (
+              <>
+                <span>完了!</span>
+              </>
+            ) : (
+              <>
+                <span>未完了</span>
+              </>
+            )}
           </li>
         ))}
       </ul>

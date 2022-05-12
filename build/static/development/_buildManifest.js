@@ -1,7 +1,8 @@
 self.__BUILD_MANIFEST = {
   __rewrites: { beforeFiles: [], afterFiles: [], fallback: [] },
   "/_error": ["static\u002Fchunks\u002Fpages\u002F_error.js"],
-  "/selfmonitoring": ["static\u002Fchunks\u002Fpages\u002Fselfmonitoring.js"],
-  sortedPages: ["\u002F_app", "\u002F_error", "\u002Fselfmonitoring"],
+  "/profile": ["static\u002Fchunks\u002Fpages\u002Fprofile.js"],
+  "/profile/edit": ["static\u002Fchunks\u002Fpages\u002Fprofile\u002Fedit.js"],
+  sortedPages: ["\u002F_app", "\u002F_error", "\u002Fprofile", "\u002Fprofile\u002Fedit"],
 }
 self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

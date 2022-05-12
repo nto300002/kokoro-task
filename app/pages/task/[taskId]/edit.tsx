@@ -12,7 +12,6 @@ export const EditTask = () => {
     getTask,
     { id: taskId },
     {
-      // This ensures the query never refreshes and overwrites the form data while the user is editing.
       staleTime: Infinity,
     }
   )
@@ -21,12 +20,11 @@ export const EditTask = () => {
   return (
     <>
       <Head>
-        <title>Edit Task {task.id}</title>
+        <title>タスク編集 ＞id:{task.id}</title>
       </Head>
 
       <div>
-        <h1>Edit Task {task.id}</h1>
-        <pre>{JSON.stringify(task, null, 2)}</pre>
+        <h1>タスク編集 ＞id:{task.id}</h1>
 
         <TaskEditForm
           submitText="Update Task"
@@ -66,7 +64,7 @@ const EditTaskPage: BlitzPage = () => {
 
       <p>
         <Link href={Routes.TasksPage()}>
-          <a>Tasks</a>
+          <a>一覧に戻る</a>
         </Link>
       </p>
     </div>
