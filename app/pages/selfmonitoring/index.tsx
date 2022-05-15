@@ -1,8 +1,8 @@
 import { BlitzPage, Link, useRouter, usePaginatedQuery } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getMonitorings from "./queries/getMonitorings"
-import { makeDocument } from "@prisma/client/runtime"
 import Calendar from "app/core/components/atoms/calendar/calendar"
+import styles from "app/core/components/atoms/mainContent.module.scss"
 
 const ITEMS_PER_PAGE = 250
 
@@ -21,14 +21,14 @@ const SelfMonitoring: BlitzPage = () => {
     router.push({ query: { page: page + 1 } })
   }
   return (
-    <div className="container">
+    <div className={styles.content}>
       <main>
-        <h1>セルフモニタリング</h1>
+        <h1 className={styles.h1}>セルフモニタリング</h1>
       </main>
 
-      <span>カレンダー</span>
+      <h2 className={styles.h2}>カレンダー</h2>
       <Calendar />
-      <p>今日の調子はどう？</p>
+      <h2 className={styles.h2}>今日の調子はどう？</h2>
       {monitorings.map((monitoring) => (
         <div key={monitoring.id}>
           <Link
@@ -37,17 +37,21 @@ const SelfMonitoring: BlitzPage = () => {
               query: { monitoringId: monitoring.id },
             }}
           >
-            <a>{JSON.stringify(monitoring.createAt, null, 2)}に作成しました</a>
+            <a className={styles.a}>
+              <p className={styles.textMap}>
+                {JSON.stringify(monitoring.createAt, null, 2)}に作成しました
+              </p>
+            </a>
           </Link>
         </div>
       ))}
       <Link href="/selfmonitoring/new">
         <a>新しく作る</a>
       </Link>
-      <button onClick={goToPreviousPage} disabled={page === 0}>
+      <button className={styles.paginaiton} onClick={goToPreviousPage} disabled={page === 0}>
         ＜
       </button>
-      <button onClick={goToNextPage} disabled={page === 0}>
+      <button className={styles.paginaiton} onClick={goToNextPage} disabled={page === 0}>
         ＞
       </button>
     </div>

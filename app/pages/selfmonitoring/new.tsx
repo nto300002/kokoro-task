@@ -4,16 +4,17 @@ import { createMonitoringSchema } from "./validations"
 import createMonitoring from "./mutations/createMonitoring"
 import { FORM_ERROR } from "app/core/components/Form"
 import { MonitoringForm } from "./components/monitoringForm"
+import styles from "app/core/components/atoms/mainContent.module.scss"
 
 const NewSelfMonitoring: BlitzPage = () => {
   const router = useRouter()
   const [createMonitoringMutation] = useMutation(createMonitoring)
   return (
-    <div className="container">
+    <div className={styles.content}>
       <main>
-        <h1>セルフモニタリング</h1>
+        <h1 className={styles.h1}>セルフモニタリング</h1>
       </main>
-      <h1>新しく作る</h1>
+      <h2 className={styles.h2}>新しく作る</h2>
 
       <MonitoringForm
         submitText="Create SelfMonitoring"

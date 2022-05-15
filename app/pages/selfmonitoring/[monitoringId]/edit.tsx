@@ -3,6 +3,7 @@ import { useMutation, useQuery, useParam, useRouter, Head, Link } from "blitz"
 import { MonitoringForm } from "../components/monitoringForm"
 import updateMonitoring from "../mutations/updateMonitoring"
 import getMonitoring from "../queries/getMonitoring"
+import styles from "app/core/components/atoms/mainContent.module.scss"
 
 const EditMonitoring = () => {
   const router = useRouter()
@@ -17,9 +18,9 @@ const EditMonitoring = () => {
   const [updateMonitoringMutation] = useMutation(updateMonitoring)
 
   return (
-    <div>
+    <div className={styles.content}>
       <div>
-        <h1>データを編集する</h1>
+        <h1 className={styles.h1}>データを編集する</h1>
         <MonitoringForm
           submitText="updateMonitoring"
           initialValues={monitoring!}
