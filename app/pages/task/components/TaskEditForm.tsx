@@ -11,7 +11,7 @@ export function TaskEditForm<S extends z.ZodType<any, any>>(props: FormProps<S>)
         name="concentration_time"
         type="number"
         label="Concentration_time"
-        placeholder="何分頑張る？"
+        placeholder="集中できた時間"
       />
     </Form>
   )

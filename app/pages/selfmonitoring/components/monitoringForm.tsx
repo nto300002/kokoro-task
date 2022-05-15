@@ -1,8 +1,8 @@
 import { Form, FormProps } from "app/core/components/Form"
-import { LabeledTextField } from "app/core/components/LabeledTextField"
+import styles from "app/core/components/LabeledText.module.scss"
 import z from "zod"
-
 import { LabeledRangeField } from "app/core/components/LabeledRangeField"
+import { LabeledTextAreaField } from "app/core/components/LabeledTextAreaField"
 
 export function MonitoringForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
   return (
@@ -51,12 +51,14 @@ export function MonitoringForm<S extends z.ZodType<any, any>>(props: FormProps<S
         step={10}
         id="value5"
       />
-      <LabeledTextField
-        type="text"
-        name="stress_contents"
-        label="どんなイライラする事があった？"
-        placeholder="stress_contents"
-      />
+      <div className={styles.textareaLabel}>
+        <LabeledTextAreaField
+          type="text"
+          name="stress_contents"
+          label="●どんなイライラする事があった？"
+          placeholder="あとからでも記入できます"
+        />
+      </div>
     </Form>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import EditButton from "app/core/components/atoms/button/EditButton"
+import Button from "app/core/components/atoms/button/Button"
 import styles from "./UserProfile.module.scss"
 import { useParam, useQuery, useMutation, Link } from "blitz"
 import getProfile from "../queries/getProfile"
@@ -20,7 +20,7 @@ const UserProfile = () => {
       </ul>
       <Link href="/profile/edit">
         <a>
-          <EditButton />
+          <Button>edit</Button>
         </a>
       </Link>
     </div>

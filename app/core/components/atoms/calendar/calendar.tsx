@@ -9,6 +9,7 @@ import addMonths from "date-fns/addMonths" // 追加
 import subMonths from "date-fns/subMonths" // 追加
 import startOfMonth from "date-fns/startOfMonth"
 import endOfMonth from "date-fns/endOfMonth"
+import styles from "./calendar.module.scss"
 
 const getCalendarArray = (date) => {
   const sundays = eachWeekOfInterval({
@@ -22,32 +23,56 @@ const Calendar = () => {
   const [targetDate, setTargetDate] = useState(new Date())
   const calendar = getCalendarArray(targetDate)
   return (
-    <div>
+    <div className={styles.calendarContainer}>
       <div>
-        <button onClick={() => setTargetDate((current) => subMonths(current, 2))}>＜</button>
-        <button onClick={() => setTargetDate((current) => subMonths(current, 1))}>前の月</button>
-        <button onClick={() => setTargetDate(new Date())}>今月</button>
-        <button onClick={() => setTargetDate((current) => addMonths(current, 1))}>次の月</button>
-        <button onClick={() => setTargetDate((current) => addMonths(current, 2))}>＞</button>
+        <button
+          className={styles.button}
+          onClick={() => setTargetDate((current) => subMonths(current, 2))}
+        >
+          ＜
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => setTargetDate((current) => subMonths(current, 1))}
+        >
+          前の月
+        </button>
+        <button className={styles.button} onClick={() => setTargetDate(new Date())}>
+          今月
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => setTargetDate((current) => addMonths(current, 1))}
+        >
+          次の月
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => setTargetDate((current) => addMonths(current, 2))}
+        >
+          ＞
+        </button>
       </div>
       {format(targetDate, "y年M月")}
-      <table>
-        <thead>
-          <tr>
-            <th>日</th>
-            <th>月</th>
-            <th>火</th>
-            <th>水</th>
-            <th>木</th>
-            <th>金</th>
-            <th>土</th>
-          </tr>
-        </thead>
+      <thead>
+        <tr>
+          <th className={styles.th}>日</th>
+          <th className={styles.th}>月</th>
+          <th className={styles.th}>火</th>
+          <th className={styles.th}>水</th>
+          <th className={styles.th}>木</th>
+          <th className={styles.th}>金</th>
+          <th className={styles.th}>土</th>
+        </tr>
+      </thead>
+      <table className={styles.calendar}>
         <tbody>
           {calendar.map((weekRow, rowNum) => (
             <tr key={rowNum}>
               {weekRow.map((date) => (
-                <td key={getDay(date)}>{getDate(date)}</td>
+                <td className={styles.tb} key={getDay(date)}>
+                  {getDate(date)}
+                </td>
               ))}
             </tr>
           ))}
