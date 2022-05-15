@@ -1,6 +1,6 @@
-import { forwardRef, PropsWithoutRef, useEffect, useState } from "react"
-import { Form, Field, useField } from "react-final-form"
-import { number } from "zod"
+import { forwardRef, PropsWithoutRef } from "react"
+import { useField } from "react-final-form"
+import styles from "./LabeledText.module.scss"
 
 export interface LabeledRangeFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["input"]> {
   id: string
@@ -28,7 +28,7 @@ export const LabeledRangeField = forwardRef<HTMLInputElement, LabeledRangeFieldP
 
     return (
       <div {...outerProps}>
-        <label>
+        <label className={styles.label}>
           {label}
           <input {...input} disabled={submitting} {...props} ref={ref} />
         </label>

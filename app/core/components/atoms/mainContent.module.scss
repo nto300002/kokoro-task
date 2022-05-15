@@ -1,0 +1,62 @@
+.content {
+  background-color: white;
+  border-radius: 10px;
+  margin: 1em;
+  padding: 3em;
+}
+
+.p {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.span {
+  font-size: 15px;
+}
+
+.a {
+  text-decoration: none;
+  &:visited {
+    color: #20b2aa;
+  }
+  &:hover {
+    color: #ff7043;
+  }
+}
+
+.textMap {
+  background-color: #f2f9ff;
+  margin-bottom: 0.4em;
+  padding: 0.5em;
+}
+
+.h1 {
+  font-size: 30px;
+  color: #009f97;
+  padding: 20px 10px;
+  border: 2px solid #d2e9fd;
+  -webkitborder-radius: 2em 0.8em 3em 0.8em/0.8em 3em 0.8em 2em;
+  -moz-border-radius: 2em 0.8em 3em 0.8em/0.8em 3em 0.8em 2em;
+  border-radius: 2em 0.8em 3em 0.8em/0.8em 3em 0.8em 2em;
+}
+
+.h2 {
+  color: #00635e;
+  padding: 10px 10px;
+  margin: 10px 10px;
+  border-bottom: 3px double #d2e9fd;
+}
+
+.paginaiton {
+  border: none;
+}
+
+.figure {
+  position: relative;
+}
+
+.comment {
+  position: absolute;
+  top: 28em;
+  left: 16em;
+}

@@ -1,5 +1,6 @@
 import { forwardRef, PropsWithoutRef } from "react"
 import { useField } from "react-final-form"
+import styles from "./LabeledText.module.scss"
 
 export interface LabeledTextFieldProps extends PropsWithoutRef<JSX.IntrinsicElements["textarea"]> {
   name: string
@@ -20,9 +21,15 @@ export const LabeledTextAreaField = forwardRef<HTMLTextAreaElement, LabeledTextF
 
     return (
       <div {...outerProps}>
-        <label>
+        <label className={styles.label}>
           {label}
-          <textarea {...input} disabled={submitting} {...props} ref={ref} />
+          <textarea
+            className={styles.textarea}
+            {...input}
+            disabled={submitting}
+            {...props}
+            ref={ref}
+          />
         </label>
 
         {touched && normalizeError && (

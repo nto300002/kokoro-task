@@ -12,7 +12,11 @@
 }
 
 .h2 {
-  font-size: 20px;
+  font-size: 25px;
+  color: #2f4f4f;
+  background: #98fb98; /*背景色*/
+  padding: 0.5em; /*文字まわり（上下左右）の余白*/
+  border-radius: 10px;
 }
 
 .authButton {
