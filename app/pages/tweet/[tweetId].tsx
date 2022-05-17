@@ -1,15 +1,15 @@
 import { Suspense } from "react"
-import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
+import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation } from "blitz"
 import getTweet from "./queries/getTweet"
 import deleteTweet from "./mutations/deleteTweet"
-import Tweet from "."
+import styles from "app/core/components/atoms/mainContent.module.scss"
+import styleButton from "app/core/components/atoms/button/Button.module.scss"
 
 export const TweetId = () => {
   const router = useRouter()
   const tweetId = useParam("tweetId", "number")
   const [deleteTweetMutation] = useMutation(deleteTweet)
-  const [tweet, { refetch }] = useQuery(getTweet, { id: tweetId })
+  const [tweet] = useQuery(getTweet, { id: tweetId })
 
   return (
     <>
@@ -17,10 +17,12 @@ export const TweetId = () => {
         <title>{tweet.id}個目のつぶやき</title>
       </Head>
 
-      <p>あなたは{tweet.text}とつぶやいた</p>
-      <p>今の気持ち：{tweet.emotion}</p>
+      <h1 className={styles.h2}>つぶやき</h1>
+      <p className={styles.textMap}>あなたは{tweet.text}とつぶやいた</p>
+      <p className={styles.textMap}>今の気持ち：{tweet.emotion}</p>
 
       <button
+        className={styleButton.deleteButton}
         type="button"
         onClick={async () => {
           if (window.confirm("削除しました")) {
@@ -37,7 +39,7 @@ export const TweetId = () => {
 
 export const ShowTweetPage: BlitzPage = () => {
   return (
-    <div>
+    <div className={styles.content}>
       <Suspense fallback={<div>Loading...</div>}>
         <TweetId />
       </Suspense>

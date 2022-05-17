@@ -2,7 +2,7 @@ import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import createTask from "app/pages/task/mutations/createTask"
 import { TaskForm, FORM_ERROR } from "app/pages/task/components/TaskForm"
-import { Suspense } from "react"
+import styles from "app/core/components/atoms/mainContent.module.scss"
 
 const NewTaskPage: BlitzPage = () => {
   const router = useRouter()
@@ -10,7 +10,7 @@ const NewTaskPage: BlitzPage = () => {
 
   return (
     <div>
-      <h1>新しいタスク追加</h1>
+      <h1 className={styles.h2}>新しいタスク追加</h1>
 
       <TaskForm
         submitText="Create Task"
@@ -31,12 +31,6 @@ const NewTaskPage: BlitzPage = () => {
           }
         }}
       />
-
-      <p>
-        <Link href={Routes.TasksPage()}>
-          <a>タスク一覧へ</a>
-        </Link>
-      </p>
     </div>
   )
 }

@@ -5,9 +5,11 @@ import getTask from "app/pages/task/queries/getTask"
 import deleteTask from "app/pages/task/mutations/deleteTask"
 import CountDownTimer from "app/core/components/timer"
 import { modalContext, useModal } from "../../core/components/timer/context/modal"
-
 import taskDone from "./mutations/taskDone"
 import taskReset from "./mutations/taskReset"
+import buttonStyle from "app/core/components/atoms/button/Button.module.scss"
+import styles from "app/core/components/atoms/mainContent.module.scss"
+import taskStyles from "app/core/components/atoms/task/task.module.scss"
 
 export const ModalClose = createContext(false)
 
@@ -45,39 +47,49 @@ export const Task = () => {
       </Head>
 
       <div>
-        <h1>title:{task.title}</h1>
-        <p>集中できた時間（分）</p>
-        <p>{task.concentration_time}</p>
+        <h1 className={styles.h2}>
+          <span className={styles.title}>【title】</span>
+          {task.title}
+        </h1>
+        <p className={styles.textMap}>集中できた時間（分） {task.concentration_time}</p>
+        <div className={taskStyles.content}>
+          <Link href={Routes.EditTaskPage({ taskId: task.id })}>
+            <a>
+              <button className={buttonStyle.Button}>編集</button>
+            </a>
+          </Link>
 
-        <Link href={Routes.EditTaskPage({ taskId: task.id })}>
-          <a>編集</a>
-        </Link>
-
-        <button
-          type="button"
-          onClick={async () => {
-            if (window.confirm("削除しますか？")) {
-              await deleteTaskMutation({ id: task.id })
-              router.push(Routes.TasksPage())
-            }
-          }}
-          style={{ marginLeft: "0.5rem" }}
-        >
-          削除
-        </button>
+          <button
+            className={buttonStyle.Button}
+            type="button"
+            onClick={async () => {
+              if (window.confirm("削除しますか？")) {
+                await deleteTaskMutation({ id: task.id })
+                router.push(Routes.TasksPage())
+              }
+            }}
+            style={{ marginLeft: "0.5rem" }}
+          >
+            削除
+          </button>
+        </div>
         <br />
         <modalContext.Provider value={ctx}>
           <CountDownTimer />
         </modalContext.Provider>
         {isDone ? (
           <>
-            <button onClick={() => TaskReset(task.id)}>進捗をリセット</button>
-            <span>完了</span>
+            <button className={taskStyles.button} onClick={() => TaskReset(task.id)}>
+              進捗をリセット
+            </button>
+            <span className={taskStyles.success}>完了</span>
           </>
         ) : (
           <>
-            <button onClick={() => TaskDone(task.id)}>進捗をすすめる</button>
-            <span>未完了</span>
+            <button className={taskStyles.button} onClick={() => TaskDone(task.id)}>
+              進捗をすすめる
+            </button>
+            <span className={taskStyles.notSuccess}>未完了</span>
           </>
         )}
       </div>
@@ -87,7 +99,7 @@ export const Task = () => {
 
 const ShowTaskPage: BlitzPage = () => {
   return (
-    <div>
+    <div className={styles.content}>
       <p>
         <Link href={Routes.TasksPage()}>
           <a>タスク一覧に戻る</a>

@@ -5,7 +5,6 @@ import { z } from "zod"
 export const CreateTweet = z.object({
   text: z.string(),
   emotion: z.string(),
-  comments: z.object({ text: z.string() }),
 })
 
 export default resolver.pipe(resolver.zod(CreateTweet), resolver.authorize(), async (input) => {

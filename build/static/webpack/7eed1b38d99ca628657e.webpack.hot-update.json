@@ -1,5 +1,0 @@
-{
-  "c": ["pages/profile", "webpack"],
-  "r": [],
-  "m": ["./app/pages/profile/mutations/incrementHeart.ts"]
-}

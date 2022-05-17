@@ -18,6 +18,5 @@ const Profile: BlitzPage = () => {
 
 Profile.authenticate = { redirectTo: "/auth/notSignIn" }
 Profile.suppressFirstRenderFlicker = true
-Profile.getLayout = (page) => <Layout title="プロフィール">{page}</Layout>
 
 export default Profile

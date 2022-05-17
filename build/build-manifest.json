@@ -18,11 +18,7 @@
       "static/chunks/main.js",
       "static/chunks/pages/profile.js"
     ],
-    "/profile/edit": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/profile/edit.js"
-    ]
+    "/tweet": ["static/chunks/webpack.js", "static/chunks/main.js", "static/chunks/pages/tweet.js"]
   },
   "ampFirstPages": []
 }

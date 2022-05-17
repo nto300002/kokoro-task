@@ -1,5 +1,5 @@
-import { Suspense } from "react"
-import { Head, Link, useRouter, useQuery, useMutation, useParam, BlitzPage, Routes } from "blitz"
+import styles from "app/core/components/atoms/mainContent.module.scss"
+import { Head, useRouter, useQuery, useMutation, useParam } from "blitz"
 import getProfile from "./queries/getProfile"
 import updateProfile from "./mutations/updateProfile"
 import ProfileForm from "./components/ProfileForm"
@@ -22,13 +22,11 @@ const EditProfile = () => {
       <Head>
         <title>プロフィール編集中</title>
       </Head>
-      <div>
-        <h1>プロフィール編集中</h1>
-        <p>名前　{user.name}</p>
-        <p>メールアドレス　{user.email}</p>
-        <p>プロフィール　{user.profile}</p>
-      </div>
-      <div>
+      <div className={styles.content}>
+        <h1 className={styles.h2}>プロフィール編集中</h1>
+        <p className={styles.textMap}>名前　{user.name}</p>
+        <p className={styles.textMap}>メールアドレス　{user.email}</p>
+        <p className={styles.textMap}>プロフィール　{user.profile}</p>
         <ProfileForm
           submitText="Update Profile"
           initialValues={user}

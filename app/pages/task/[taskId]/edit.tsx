@@ -4,6 +4,7 @@ import Layout from "app/core/layouts/Layout"
 import getTask from "app/pages/task/queries/getTask"
 import editTask from "app/pages/task/mutations/editTask"
 import { TaskEditForm, FORM_ERROR } from "app/pages/task/components/TaskEditForm"
+import styles from "app/core/components/atoms/mainContent.module.scss"
 
 export const EditTask = () => {
   const router = useRouter()
@@ -23,8 +24,8 @@ export const EditTask = () => {
         <title>タスク編集 ＞id:{task.id}</title>
       </Head>
 
-      <div>
-        <h1>タスク編集 ＞id:{task.id}</h1>
+      <div className={styles.content}>
+        <h1 className={styles.h2}>タスク編集 ＞id:{task.id}</h1>
 
         <TaskEditForm
           submitText="Update Task"

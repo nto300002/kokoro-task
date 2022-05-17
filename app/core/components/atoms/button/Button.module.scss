@@ -18,3 +18,24 @@
     letter-spacing: 1px;
   }
 }
+
+.deleteButton {
+  margin-left: 4em;
+  padding: 0.5em 2em;
+  width: 100px;
+  color: rgb(252, 252, 252);
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #ff4848;
+  transition: 0.3s;
+  box-shadow: 2px 2px #c1c1c1;
+  border: none;
+  border-radius: 5px;
+  &:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #c11300;
+    border-bottom: 2px solid #630a00;
+    letter-spacing: 1px;
+  }
+}

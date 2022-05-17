@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+  "/api/rpc/getProfile": "pages/api/rpc/getProfile.js",
   "/profile": "pages/profile.js",
-  "/profile/edit": "pages/profile/edit.js"
+  "/tweet": "pages/tweet.js"
 }

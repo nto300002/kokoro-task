@@ -14,6 +14,11 @@
   font-size: 15px;
 }
 
+.title {
+  font-size: 17px;
+  color: #003a50;
+}
+
 .a {
   text-decoration: none;
   &:visited {
@@ -59,4 +64,8 @@
   position: absolute;
   top: 28em;
   left: 16em;
+}
+
+.space {
+  margin-top: 4em;
 }

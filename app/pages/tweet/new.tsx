@@ -1,18 +1,17 @@
 import { Link, useRouter, useMutation, BlitzPage, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
 import createTweet from "./mutations/createTweet"
 import { TweetForm } from "./components/TweetForm"
 import { createTweetSchema } from "./validations"
 import { FORM_ERROR } from "app/core/components/Form"
-import error from "next/error"
+import style from "app/core/components/atoms/mainContent.module.scss"
 
 const NewTweetPage: BlitzPage = () => {
   const router = useRouter()
   const [createTweetMutation] = useMutation(createTweet)
 
   return (
-    <div>
-      <p>つぶやく</p>
+    <div className={style.content}>
+      <h1 className={style.h2}>つぶやく</h1>
 
       <TweetForm
         submitText="つぶやいてみる"
@@ -39,6 +38,5 @@ const NewTweetPage: BlitzPage = () => {
 }
 
 NewTweetPage.suppressFirstRenderFlicker = true
-NewTweetPage.getLayout = (page) => <Layout title="Home">{page}</Layout>
 
 export default NewTweetPage
