@@ -1,0 +1,24 @@
+{
+  "c": ["webpack"],
+  "r": ["pages/task"],
+  "m": [
+    "./app/core/components/Form.tsx",
+    "./app/core/components/FormButton.module.scss",
+    "./app/core/components/LabeledText.module.scss",
+    "./app/core/components/LabeledTextField.tsx",
+    "./app/pages/task/components/TaskForm.tsx",
+    "./app/pages/task/index.tsx",
+    "./app/pages/task/mutations/createTask.ts",
+    "./app/pages/task/new.tsx",
+    "./app/pages/task/queries/getTasks.ts",
+    "./node_modules/final-form/dist/final-form.es.js",
+    "./node_modules/final-form/node_modules/@babel/runtime/helpers/esm/extends.js",
+    "./node_modules/final-form/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js",
+    "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftask&absolutePagePath=%2FUsers%2Fyasuda%2FDownloads%2Fkokoro-task%2Fapp%2Fpages%2Ftask%2Findex.tsx!",
+    "./node_modules/next/dist/compiled/css-loader/cjs.js??ruleSet[1].rules[5].oneOf[3].use[1]!./node_modules/next/dist/compiled/postcss-loader/cjs.js??ruleSet[1].rules[5].oneOf[3].use[2]!./node_modules/next/dist/compiled/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[3].use[3]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[3].use[4]!./app/core/components/FormButton.module.scss",
+    "./node_modules/next/dist/compiled/css-loader/cjs.js??ruleSet[1].rules[5].oneOf[3].use[1]!./node_modules/next/dist/compiled/postcss-loader/cjs.js??ruleSet[1].rules[5].oneOf[3].use[2]!./node_modules/next/dist/compiled/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[3].use[3]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[3].use[4]!./app/core/components/LabeledText.module.scss",
+    "./node_modules/react-final-form/dist/react-final-form.es.js",
+    "./node_modules/react-final-form/node_modules/@babel/runtime/helpers/esm/extends.js",
+    "./node_modules/react-final-form/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js"
+  ]
+}

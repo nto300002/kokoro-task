@@ -3,6 +3,7 @@ import getTask from "app/pages/task/queries/getTask"
 import { useParam, useQuery } from "blitz"
 import styles from "app/core/components/atoms/modalWindow/modalWindow.module.scss"
 import { modalContext } from "./context/modal"
+import taskStyles from "app/core/components/atoms/task/task.module.scss"
 
 export default function CountDownTimer(props) {
   const taskId = useParam("taskId", "number")
@@ -82,8 +83,10 @@ export default function CountDownTimer(props) {
           </div>
         </div>
       ) : (
-        <div>
-          <button onClick={() => handleModalOpen()}>タイマー起動</button>
+        <div className={taskStyles.content}>
+          <button className={taskStyles.taskTimerButton} onClick={() => handleModalOpen()}>
+            タイマー起動
+          </button>
         </div>
       )}
     </>

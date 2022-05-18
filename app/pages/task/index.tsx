@@ -1,19 +1,10 @@
-import { Suspense, useState } from "react"
-import {
-  Head,
-  Link,
-  usePaginatedQuery,
-  useRouter,
-  BlitzPage,
-  Routes,
-  useSession,
-  useMutation,
-  useParam,
-  useQuery,
-} from "blitz"
+import { Suspense } from "react"
+import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes, useSession } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getTasks from "app/pages/task/queries/getTasks"
 import NewTaskPage from "./new"
+import styles from "app/core/components/atoms/mainContent.module.scss"
+import taskStyles from "app/core/components/atoms/task/task.module.scss"
 
 const ITEMS_PER_PAGE = 100
 
@@ -36,15 +27,17 @@ export const TasksList = () => {
         {tasks.map((task) => (
           <li key={task.id}>
             <Link href={Routes.ShowTaskPage({ taskId: task.id })}>
-              <a>{task.title}</a>
+              <a>
+                <p className={styles.textMap}>{task.title}</p>
+              </a>
             </Link>
             {task.done ? (
               <>
-                <span>完了!</span>
+                <span className={taskStyles.success}>完了!</span>
               </>
             ) : (
               <>
-                <span>未完了</span>
+                <span className={taskStyles.notSuccess}>未完了</span>
               </>
             )}
           </li>
@@ -68,7 +61,7 @@ const TasksPage: BlitzPage = () => {
         <title>タスク一覧</title>
       </Head>
 
-      <div>
+      <div className={styles.content}>
         <Suspense fallback={<div>Loading...</div>}>
           <TasksList />
           <NewTaskPage />

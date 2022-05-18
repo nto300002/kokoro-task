@@ -1,0 +1,54 @@
+.success {
+  color: rgb(230, 93, 35);
+  margin-left: 1em;
+}
+
+.notSuccess {
+  color: rgb(19, 40, 155);
+  margin-left: 1em;
+}
+
+.button {
+  margin-top: 0.5em;
+  margin-left: 1em;
+  margin-bottom: 35em;
+  padding: 0.5em 2em;
+  width: 140px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #b3d2d8;
+  transition: 0.3s;
+  box-shadow: 2px 2px #c1c1c1;
+  border: none;
+  border-radius: 20px;
+  &:hover {
+    color: #fff;
+    background: #517fa7;
+    border-bottom: 2px solid #334f68;
+    letter-spacing: 1px;
+  }
+}
+
+.taskTimerButton {
+  margin-left: 1em;
+  padding: 0.5em 2em;
+  width: 140px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #b3d2d8;
+  transition: 0.3s;
+  box-shadow: 2px 2px #c1c1c1;
+  border: none;
+  border-radius: 20px;
+  &:hover {
+    color: #fff;
+    background: #517fa7;
+    border-bottom: 2px solid #334f68;
+  }
+}
+
+.content {
+  margin-top: 2em;
+}
