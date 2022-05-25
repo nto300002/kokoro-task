@@ -72,6 +72,5 @@ const TasksPage: BlitzPage = () => {
 }
 
 TasksPage.authenticate = { redirectTo: "/auth/notSignIn" }
-TasksPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default TasksPage

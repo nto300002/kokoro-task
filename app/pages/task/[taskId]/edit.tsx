@@ -73,6 +73,5 @@ const EditTaskPage: BlitzPage = () => {
 }
 
 EditTaskPage.authenticate = true
-EditTaskPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default EditTaskPage

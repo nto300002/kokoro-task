@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/api/rpc/getProfile": "pages/api/rpc/getProfile.js",
-  "/profile": "pages/profile.js",
-  "/tweet": "pages/tweet.js"
+  "/task/[taskId]": "pages/task/[taskId].js",
+  "/task/[taskId]/edit": "pages/task/[taskId]/edit.js",
+  "/api/rpc/getTask": "pages/api/rpc/getTask.js",
+  "/api/rpc/users/getCurrentUser": "pages/api/rpc/users/getCurrentUser.js"
 }

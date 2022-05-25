@@ -36,6 +36,5 @@ const NewTaskPage: BlitzPage = () => {
 }
 
 NewTaskPage.authenticate = true
-NewTaskPage.getLayout = (page) => <Layout title={"Create New Task"}>{page}</Layout>
 
 export default NewTaskPage

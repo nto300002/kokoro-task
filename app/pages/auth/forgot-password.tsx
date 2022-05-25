@@ -3,13 +3,13 @@ import { LabeledTextField } from "app/core/components/LabeledTextField"
 import { Form, FORM_ERROR } from "app/core/components/Form"
 import { ForgotPassword } from "app/core/components/authForm/validations"
 import forgotPassword from "app/mutations/auth/forgotPassword"
-import Layout from "app/core/layouts/Layout"
+import styles from "app/core/components/atoms/mainContent.module.scss"
 
 const ForgotPasswordPage: BlitzPage = () => {
   const [forgotPasswordMutation, { isSuccess }] = useMutation(forgotPassword)
 
   return (
-    <div>
+    <div className={styles.content}>
       <h1>パスワードの再設定をしますか？</h1>
 
       {isSuccess ? (
@@ -42,3 +42,5 @@ const ForgotPasswordPage: BlitzPage = () => {
     </div>
   )
 }
+
+export default ForgotPasswordPage

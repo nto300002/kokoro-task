@@ -23,9 +23,9 @@ const Header: BlitzLayout = () => {
           <li className={styles.li_right}>
             <MenuIcon />
           </li>
-          <li>{session?.email}</li>
         </ul>
       </nav>
+      <p className={styles.email}>{session?.email}</p>
     </>
   )
 }
