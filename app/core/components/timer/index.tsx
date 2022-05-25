@@ -54,15 +54,16 @@ export default function CountDownTimer(props) {
           }}
         >
           <div className={styles.content}>
-            <h1>{task.title}のタイマーです</h1>
-            <p>
+            <h1 className={taskStyles.h1}>{task.title}のタイマーです</h1>
+            <p className={taskStyles.p}>
               使い方：↑↓の矢印をクリックするとタイマーの時間(分)を操作できます
               <br />
               途中で時間を変更することもできます
             </p>
-            <p>
+            <p className={taskStyles.p}>
               あと
               <input
+                className={taskStyles.timerInput}
                 name="time"
                 type="number"
                 value={mins}

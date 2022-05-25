@@ -18,9 +18,7 @@ export default function Home() {
         <div className={styles.container}>
           <h2 className={styles.h2}>サインインしています</h2>
           <div>
-            <p className={textStyle.p}>
-              Email:<span className={textStyle.content}>{session?.email}</span>
-            </p>
+            <p className={textStyle.textMap}>Email:{session?.email}</p>
           </div>
           <Link href="/task">
             <a className={textStyle.a}>タスク投稿へ　</a>

@@ -114,6 +114,5 @@ const ShowTaskPage: BlitzPage = () => {
 }
 
 ShowTaskPage.authenticate = true
-ShowTaskPage.getLayout = (page) => <Layout>{page}</Layout>
 
 export default ShowTaskPage

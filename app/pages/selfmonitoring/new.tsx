@@ -46,6 +46,5 @@ const NewSelfMonitoring: BlitzPage = () => {
 
 NewSelfMonitoring.authenticate = { redirectTo: "/auth/notSignIn" }
 NewSelfMonitoring.suppressFirstRenderFlicker = true
-NewSelfMonitoring.getLayout = (page) => <Layout title="Home">{page}</Layout>
 
 export default NewSelfMonitoring
